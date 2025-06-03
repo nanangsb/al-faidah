@@ -322,6 +322,7 @@ export async function loader({ request }: LoaderArgs) {
     .select("*")
     .eq("type_id", 1)
     .eq("status_id", 1)
+    .neq("id", 6) // forbidden id
     .neq("id", 7); // forbidden id
 
   const client = new MeiliSearch({
